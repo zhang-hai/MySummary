@@ -1,0 +1,55 @@
+.header{
+    background-color: black;
+    height: 50px;
+    padding: 0 10px;
+    position: sticky;
+    top: 0;
+}
+.header > div{
+    display: inline-block;
+    color: white;
+    min-width: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration-line: none;
+    position: relative;
+    cursor: pointer;
+    padding: 0px 10px;
+}
+.header .subject{
+    padding: 0 !important;
+}
+.header .subject .title{
+    padding: 0 10px;
+    min-width: 50px;
+}
+
+.title:hover{
+    background-color: skyblue;
+}
+
+.subject .droplist{
+    display: none;
+    width: 80px;
+    background: gainsboro;
+    padding: 10px 0px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+}
+.subject .droplist a{
+    color: black;
+    display: block;
+    text-align: center;
+    height: 30px;
+    text-decoration-line: none;
+    line-height: 30px;
+}
+.subject .droplist a:hover{
+    background-color: gray;
+    color: white;
+}
+
+.subject:hover .droplist{
+    display: block;
+}

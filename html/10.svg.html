@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG示例</title>
+</head>
+<body>
+    <!-- 绘制矩形 -->
+    <svg width="300" height="70">
+        <rect width="200" height="50" fill="yellow" stroke-width="1" stroke="red"/>
+    </svg>
+    <br>
+    <!-- 绘制圆形 -->
+    <svg width="300" height="80">
+        <circle cx="40" cy="40" r="30" />
+        <circle cx="120" cy="40" r="30" fill="transparent" stroke-width="5" stroke="blue"/>
+    </svg>
+    <br>
+    <!-- 绘制椭圆 -->
+    <svg width="300" height="100">
+        <ellipse cx="50" cy="40" rx="40" ry="20" />
+        <ellipse cx="150" cy="40" rx="40" ry="20" fill="transparent" stroke-width="5" stroke="blue"/>
+    </svg>
+    <br>
+    <!-- 绘制直线 -->
+    <svg width="300" height="30">
+        <line x1="20" y1="10" x2="180" y2="20" stroke-width="3" stroke="red"/>
+    </svg>
+    <br>
+    <!-- 绘制多边形 -->
+    <svg width="500" height="200">
+        <!-- 三角形 -->
+        <polygon points="10,10 100,45 60,60" fill="lime" stroke-width="1" stroke="red"/>
+        <!-- 长方形 -->
+        <polygon points="120,10 190,10 190,60 120,60" fill="lime" stroke-width="1" stroke="red"/>
+        <!-- 五角星 -->
+        <polygon points="300,10 240,198 398,78 210,78 360,198" fill="grey" stroke-width="1" stroke="blue"/>
+    </svg>
+    <br>
+    <!-- 绘制多边形 -->
+    <svg width="500" height="80">
+        <!-- 三角形 -->
+        <polyline points="10,10 100,45 150,20 180,60 210,10" fill="none" stroke-width="1" stroke="red"/>
+    </svg>
+    <br>
+    <!-- 绘制文本 -->
+    <svg width="500" height="110">
+        <text x="20" y="35" fill="red" >0基础学习HTML</text>
+        <!-- 旋转文字 -->
+        <!-- rotate(20 200,20) 第一个为角度，后面为旋转中心点坐标 缺省时为坐标原点0,0-->
+        <text x="180" y="35" fill="blue" transform="rotate(20 200,20)">0基础学习HTML</text>
+        <!-- 多行文本 -->
+        <text x="20" y="60">
+            多行文本
+            <tspan x="20" y="80">第一行文本</tspan>
+            <tspan x="20" y="100">第二行文本</tspan>
+        </text>
+    </svg>
+    <br>
+    <svg width="500" height="50" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <!-- 给文本添加超链接 -->
+        <a xlink:href="https:www.baidu.com" target="_blank">
+            <text x="20" y="20" fill="blue">我时一个超链接文本</text>
+        </a>
+    </svg>
+    <br>
+    <!-- 绘制path -->
+    <svg width="500" height="160">
+        <!-- 通过path绘制一个三角形 -->
+        <path d="M20 10 L60 36 L10 50" fill="blue"/>
+        <!-- 绘制一条二次贝塞尔曲线 -->
+        <path d="M120 40 Q175 -20 230 40" fill="none" stroke="red"/>
+        <!-- 绘制一条三次贝塞尔曲线 -->
+        <path d="M300 40 C300,0 350,0 320,80 430,160" fill="none" stroke="red"/>
+        <!-- 绘制一条平滑曲线 -->
+        <path d="M20 130 S100,20 150,110 200,40 300,140" fill="none" stroke="red"/>
+    </svg>
+    <br>
+    <!-- 通过g标签对相同属性的标签进行分组 -->
+    <svg width="500" height="100">
+        <g font-size="20" fill="blue" text-anchor="middle">
+            <text x="20" y="20">一组</text>
+            <text x="20" y="45">二组</text>
+            <text x="20" y="70">三组</text>
+        </g>
+    </svg>
+    <br>
+    <!-- 模糊和阴影 -->
+    <svg width="500" height="200">
+        <defs>
+            <filter x="0" y="0" id="f1">
+                <feGaussianBlur stdDeviation="3"/>
+            </filter>
+        </defs>
+        <!-- 未模糊效果 -->
+        <rect width="120" height="60" fill="yellow" stroke="blue" stroke-width="2"/>
+        <!-- 通过filter属性实现模糊 -->
+        <rect x="140" width="120" height="60" fill="yellow" stroke="blue" stroke-width="2" filter="url(#f1)"/>
+
+        <!-- 阴影 -->
+        <defs>
+            <filter x="0" y="0" width="200" height="200" id="f2">
+                <!-- SourceAlpha给图形制作一个黑色阴影-->
+                <feOffset dx="20" dy="20" in="SourceAlpha"/>
+                <!-- 给阴影添加一个模糊 -->
+                <feGaussianBlur stdDeviation="10"/>
+                <!-- SourceGraphic表示在偏移的图像上混合原始图像 -->
+                <feBlend in="SourceGraphic"/>
+            </filter>
+        </defs>
+        <rect y= "80" width="120" height="60" fill="yellow" stroke="blue" stroke-width="2" filter="url(#f2)"/>
+    </svg>
+    <br>
+
+    <!-- 线性渐变和径向渐变 -->
+    <svg width="500" height="100">
+        <defs>
+            <!--  -->
+            <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="l1">
+                <stop offset="20%" stop-color="rgb(255,255,0)"/>
+                <stop offset="100%" stop-color="rgb(255,0,0)"/>
+            </linearGradient>
+        </defs>
+        <!-- 线性渐变 -->
+        <rect width="120" height="60" fill="url(#l1)"/>
+
+        <!-- 径向渐变 -->
+        <defs>
+            <radialGradient id="r1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                <stop offset="0%" stop-color="rgb(255,255,255)"/>
+                <stop offset="100%" stop-color="rgb(0,0,255)"/>
+            </radialGradient>
+        </defs>
+        <rect x="200" width="120" height="60" fill="url(#r1)"/>
+    </svg>
+</body>
+</html>

@@ -1,0 +1,177 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html,body{
+    height: 100%;
+}
+li,ul{
+    list-style: none;
+}
+.container{
+    width: 100%;
+    height: 100%;
+}
+.top{
+    height: 50px;
+    background-color: #428bca;
+    .left{
+        width: 190px;
+        height: 100%;
+        /* background-color: sandybrown; */
+        float: left;
+        line-height: 50px;
+    }
+    .left > img{
+        height: 45px;
+        margin-left: 20px;
+        vertical-align: middle;
+    }
+    .right{
+        height: 100%;
+        margin-left: 190px;
+        color: white;
+        line-height: 50px;
+        > ul {
+            float: left;
+            > li{
+                float: left;
+                padding: 0px 10px;
+                padding-left: 40px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+        }
+        .topname{
+            float: right;
+            margin-right: 20px;
+            position: relative;
+            > p{
+                cursor: pointer;
+                > span{
+                    display: inline-block;
+                    width: 0px;
+                    height: 0px;
+                    border: 5px solid transparent;
+                    border-top: 5px solid white;
+                }
+            }
+            .droplist{
+                display: none;
+                float: right;
+                width: 80px;
+                background: white;
+                padding: 10px 0px;
+                position: absolute;
+                top: 50px;
+                left: -20px;
+                > a{
+                    color: black;
+                    display: block;
+                    text-align: center;
+                    height: 30px;
+                    text-decoration-line: none;
+                    line-height: 30px;
+                    &:hover{
+                        background-color: #428bca;
+                        color: white;
+                    }
+                }
+            }
+            &:hover .droplist{
+                display: block;
+            }
+        }
+        .one{
+            background: url('./img/sx-icon-edit.png') no-repeat 15% center;
+            &:hover{
+                color: #428bca;
+                background-color: white;
+            }
+        }
+        .two{
+            background: url('./img/sx-icon-merge.png') no-repeat 15% center;
+            &:hover{
+                color: #428bca;
+                background-color: white;
+            }
+        }
+    }
+}
+
+.bot{
+    width: 100%;
+    height: calc(100% - 50px);
+    /* background-color: peru; */
+    .left{
+        /* background-color: burlywood; */
+        width: 190px;
+        height: 100%;
+        border-right: 1px solid gray;
+        float: left;
+        > ul > li{
+            border-bottom: 1px solid #ccc;
+            font-size: 14px;
+            color: #232323;
+            line-height: 40px;
+            text-indent: 20px;
+            background-color: #f9f9f9;
+            > i{
+                margin-top: 12px;
+                margin-right: 20px;
+                font-size: 14px;
+                color: #585858;
+                float: right;
+            }
+            &:hover{
+                background-color: white;
+                border-right: 2px solid #428bca;
+                > i{
+                    color: #428bca;
+                }
+            }
+        }
+    }
+    .right{
+        height: 100%;
+        margin-left: 190px;
+        .main_tit{
+            border-bottom: 1px solid #e5e5e5;
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            text-indent: 20px;
+            color: #232323;
+            > span{
+                color: #428bca;
+            }
+        }
+        .main_info{
+            border: 1px solid #c5d0dc;
+            height: 430px;
+            margin: 10px 30px 0px;
+            > table{
+                width: 95%;
+                height: 380px;
+                border: 1px solid #ddd;
+                border-collapse: collapse;
+                margin: 0 auto;
+                margin-top: 10px;
+
+                .tb_tit{
+                    background-color: #f5f5f5;
+                }
+                .even{
+                    background-color: #f9f9f9;
+                }
+            }
+            > table td{
+                width: 25%;
+                color: #707070;
+                font-size: 14px;
+                padding: 5px;
+                border: 1px solid #ddd;
+            }
+        }
+    }
+}
