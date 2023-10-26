@@ -179,14 +179,30 @@ android 编译资源打包资源文件的命令。
 
 ##### 1.创建签名文件
 
+
+
 ##### 2.查看签名文件
 
 - 查看MD5
   
+  方式一(该方式不是很有效果，建议采用方式二)：
+  
   > keytool -exportcert -keystore [签名文件] | openssl dgst -md5
+  
+  方式二：
+  
+  > ./gradlew signingReport
+  
+  或直接运行gradle的Task任务
+  
+  ![](https://upload-images.jianshu.io/upload_images/11268516-f18b001c3f27ebd3.png?imageMogr2/auto-orient/strip|imageView2/2/w/1120/format/webp)
 
 - 列出签名信息
   
   > keytool -v -list -keystore [签名文件]
   
   > keytool -v -list -keystore [签名文件] -storepass "秘钥"
+
+- 查看签名文件公钥
+  
+  > keytool -list -rfc --keystore [签名文件] | openssl x509 -inform pem -pubkey
