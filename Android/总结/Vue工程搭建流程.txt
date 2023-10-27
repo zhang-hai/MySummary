@@ -1,0 +1,7 @@
+1.生成项目工程：vue init webpack <project-name>
+
+2.进入创建的工程；
+
+3.添加工程依赖：cnpm i，添加完成后工程中会增加node_modules目录。
+
+4.启动项目：npm run dev;

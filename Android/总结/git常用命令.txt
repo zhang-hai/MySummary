@@ -1,0 +1,27 @@
+…or create a new repository on the command line
+echo "# JetpackDemo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:zhang-hai/JetpackDemo.git
+git push -u origin master
+
+//pick单次提交
+git cherry-pick <commitHash>  
+
+
+创建Tag
+1.创建：git tag -a <tagName> -m <"my tag">
+2.同步到远程服务器：git push origin <tagName>
+  推送所有：             git push origin --tags
+
+1. 删除本地tag
+　git tag -d tag-name
+
+2. 删除远程tag
+　git push origin :refs/tags/tag-name
+
+git tag -n	//显示所有标签以及备注
+
+
+
